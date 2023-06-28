@@ -17,9 +17,9 @@ enum PlayState {
 }
 
 enum PCMType {
-    PCMI8,
-    PCMI16,
-    PCMF32,
+    pcm8,
+    pcm16,
+    pcm32,
 }
 
 public class PcmPlayer {
@@ -42,8 +42,8 @@ public class PcmPlayer {
 
     void init(final int nChannels, final int sampleRate, final int pcmType) {
         PCMType type = PCMType.values()[(int)pcmType];
-        int format = type == PCMType.PCMI8 ? AudioFormat.ENCODING_PCM_8BIT :
-                type == PCMType.PCMI16 ? AudioFormat.ENCODING_PCM_16BIT : AudioFormat.ENCODING_PCM_FLOAT;
+        int format = type == PCMType.pcm8 ? AudioFormat.ENCODING_PCM_8BIT :
+                type == PCMType.pcm16 ? AudioFormat.ENCODING_PCM_16BIT : AudioFormat.ENCODING_PCM_FLOAT;
         int channelConfig = nChannels == 1 ? AudioFormat.CHANNEL_OUT_MONO : AudioFormat.CHANNEL_OUT_STEREO;
         mBufferSize = AudioTrack.getMinBufferSize(sampleRate, channelConfig, format);
 

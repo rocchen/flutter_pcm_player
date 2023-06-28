@@ -5,13 +5,13 @@ import 'package:flutter/services.dart';
 /// PCM format type
 enum PCMType {
   /// PCM format: Integer 8-bit, native endianness
-  PCMI8,
+  pcm8,
 
   /// PCM format: Integer 16-bit, native endianness
-  PCMI16,
+  pcm16,
 
   /// PCM format: Float 32-bit, native endianness
-  PCMF32,
+  pcm32,
 }
 
 /// Play state
@@ -66,7 +66,7 @@ class FlutterPcmPlayer {
   Future<void> initialize({
     int nChannels = 1,
     int sampleRate = 16000,
-    PCMType pcmType = PCMType.PCMI16,
+    PCMType pcmType = PCMType.pcm16,
   }) async {
     release();
 
