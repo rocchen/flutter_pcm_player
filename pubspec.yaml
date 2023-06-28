@@ -1,7 +1,7 @@
 name: flutter_pcm_player
 description: A new Flutter project.
 version: 0.0.1
-homepage: https://github.com/rocchen/flutter_blue_ios_zebra
+homepage: https://github.com/rocchen/flutter_pcm_player
 
 environment:
   sdk: '>=2.19.6 <3.0.0'
