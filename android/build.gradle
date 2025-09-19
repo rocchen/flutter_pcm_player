@@ -22,6 +22,9 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
+    if(android.hasProperty('namespace')) {
+        namespace 'com.example.flutter_pcm_player'
+    }
     compileSdkVersion 31
 
     compileOptions {
